@@ -1,27 +1,28 @@
-import React from 'react';
-import { View, FlatList, Button } from 'react-native';
-import { PRODUCTS } from '../../data/products';
-import ProductCard from '../../components/ProductCard/ProductCard';
-import { useCart } from '../../context/CartContext';
-import { useTheme } from '../../context/ThemeContext';
-import styles from './HomeScreen.styles';
+import React from "react";
+import { View, FlatList } from "react-native";
+import { PRODUCTS } from "../../data/products";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import { useCart } from "../../context/CartContext";
+import { useTheme } from "../../context/ThemeContext";
+import Styles from "./HomeScreen.styles";
 
 const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const { addToCart } = useCart();
-  const { toggle, colors } = useTheme();
+  const { colors } = useTheme();
+  const styles = Styles(colors);
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-
+    <View style={styles.container}>
       <FlatList
-        key="two-columns"
         data={PRODUCTS}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         numColumns={2}
+        columnWrapperStyle={styles.row}
         renderItem={({ item }) => (
           <ProductCard
             product={item}
             onAddToCart={() => addToCart(item)}
+            colors={colors}
           />
         )}
       />

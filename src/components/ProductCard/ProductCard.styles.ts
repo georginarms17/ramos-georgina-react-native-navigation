@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
 
-export const Styles = (colors: any) =>
+const Styles = (colors: any) =>
   StyleSheet.create({
     card: {
       backgroundColor: colors.card,
       padding: 15,
-      margin: 5,
       borderRadius: 10,
       flex: 1,
       maxWidth: "48%",
@@ -14,40 +13,40 @@ export const Styles = (colors: any) =>
       shadowOpacity: 0.1,
       shadowRadius: 4,
       elevation: 3,
-      position: "relative",
+      marginBottom: 10,
+      flexDirection: "column", 
+      justifyContent: "space-between", 
+      height: 300, 
     },
     image: {
       width: "100%",
-      height: 150,
+      height: 160,
       borderRadius: 8,
-      marginBottom: 10,
+      marginBottom: 5,
     },
     name: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: "800",
       color: colors.text,
-      marginBottom: 40,
+      marginBottom: 5,
+    },
+    footer: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginTop: 10,
     },
     price: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: "700",
       color: colors.accent,
-      marginBottom: 5,
-      marginLeft: 5,
-      position: "absolute",
-      bottom: 10,
-      left: 10,
     },
     button: {
       backgroundColor: colors.accent,
-      padding: 10,
+      padding: 8,
       borderRadius: 5,
       alignItems: "center",
-      flexDirection: "row",
       justifyContent: "center",
-      position: "absolute",
-      bottom: 10,
-      right: 10,
     },
     buttonText: {
       color: "#fff",

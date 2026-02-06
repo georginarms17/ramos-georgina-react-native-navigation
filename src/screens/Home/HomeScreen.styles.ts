@@ -1,14 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  row: {
-    justifyContent: 'space-between',
-    paddingHorizontal: 5,
-  },
-});
+const Styles = (colors: any) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 16,
+      backgroundColor: colors.background,
+    },
+    row: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: 10,
+    },
+  });
 
-export default styles;
+export default Styles;
