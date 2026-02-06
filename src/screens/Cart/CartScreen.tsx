@@ -69,7 +69,10 @@ const CartScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         <Text style={styles.emptyText}>Your cart is empty</Text>
         <Pressable 
           style={styles.shopButton}
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }],
+          })}
         >
           <Text style={styles.shopButtonText}>Start Shopping</Text>
         </Pressable>

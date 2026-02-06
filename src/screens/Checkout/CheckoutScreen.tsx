@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, FlatList, Image, Alert } from 'react-native';
+import { View, Text, Pressable, FlatList, Image } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useCart } from '../../context/CartContext';
